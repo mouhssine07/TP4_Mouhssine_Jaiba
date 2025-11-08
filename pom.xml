@@ -44,6 +44,17 @@
             <version>2.23.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parsers-standard-package</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tika</groupId>
+            <artifactId>tika-parser-pdf-module</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
 
         <dependency>
             <groupId>dev.langchain4j</groupId>

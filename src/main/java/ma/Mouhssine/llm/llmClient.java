@@ -31,5 +31,10 @@ public class llmClient {
                 .maxOutputTokens(512)          // limite du nombre de tokens générés
                 .build();
 
+
+
+
+        }
+
+
     }
-}
