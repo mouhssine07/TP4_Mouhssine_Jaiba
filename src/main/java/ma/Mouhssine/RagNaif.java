@@ -18,7 +18,7 @@ import dev.langchain4j.rag.query.Query;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.store.embedding.EmbeddingStore;
 import dev.langchain4j.store.embedding.inmemory.InMemoryEmbeddingStore;
-import ma.Mouhssine.llm.llmClient;
+
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -78,9 +78,9 @@ public class RagNaif {
             // 2. Création du modèle LLM (Gemini)
             ChatModel model = GoogleAiGeminiChatModel.builder()
                     .apiKey(llmKey)
-                    .modelName("gemini-2.5-flash") // modèle rapide et récent
-                    .temperature(0.3)              // température faible = réponses plus précises
-                    .maxOutputTokens(512)          // limite du nombre de tokens générés
+                    .modelName("gemini-2.5-flash")
+                    .temperature(0.3)
+                    .maxOutputTokens(512)
                     .build();
 
 
@@ -88,8 +88,8 @@ public class RagNaif {
 
             Assistant assistant = AiServices.builder(Assistant.class)
                     .chatModel(model)
-                    .chatMemory(MessageWindowChatMemory.withMaxMessages(10)) // mémoire pour 10 messages
-                    .contentRetriever(retriever)                            // le RAG retriever
+                    .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
+                    .contentRetriever(retriever)
                     .build();
 
             conversationAvec(assistant);
@@ -108,7 +108,7 @@ public class RagNaif {
                 String question = scanner.nextLine();
 
                 if (question.isBlank()) {
-                    continue; // ignore les lignes vides
+                    continue;
                 }
 
                 if ("fin".equalsIgnoreCase(question)) {
